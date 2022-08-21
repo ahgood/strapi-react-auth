@@ -8,12 +8,12 @@ class RegisterPage extends Component {
   onHandleRegistration = (event) => {
     event.preventDefault();
 
-    let name = event.target.name.value;
+    let username = event.target.username.value;
     let email = event.target.email.value;
     let password = event.target.password.value;
 
     const data = {
-      name, email, password
+      username, email, password
     };
 
     this.props.dispatch(registerUserAction(data));
@@ -33,8 +33,8 @@ class RegisterPage extends Component {
         {!isSuccess ? <div>{message}</div> : <Redirect to='login' />}
         <form onSubmit={this.onHandleRegistration}>
           <div>
-            <label>Name</label>
-            <input type="text" name="name" />
+            <label>User Name</label>
+            <input type="text" name="username" />
           </div>
           <div>
             <label>Email</label>

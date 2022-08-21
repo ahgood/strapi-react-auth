@@ -13,7 +13,7 @@ class LoginPage extends Component {
     let password = event.target.password.value;
 
     const data = {
-      email, password
+      identifier: email, password
     };
 
     this.props.dispatch(loginUserAction(data));
